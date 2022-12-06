@@ -1,5 +1,5 @@
-# FDMS
-# Faculty Database management system using JsonPowerDB
+# SDBMS
+# Student Database management system using JsonPowerDB
 ## A simple **HTML Web Application** made with **JavaScipt** and **JsonPowerDB** for **Faculty Database Management System**.
 * JsonPowerDB is a Database Server with Developer friendly REST API services. It's a High Performance, Light Weight, Ajax Enabled, Serverless, Simple to Use, Real-time Database.
 * JPDB supports and advocates for true serverless and pluggable API development.
@@ -15,7 +15,7 @@
 
 ## Introduction
 In this project, you can do the following:
-* Register a Faculty.
+* Register a Student.
 * Validity Checking of each field
 * Alerts of each Actions 
 
