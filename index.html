@@ -57,54 +57,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         <div class="container">
             <h2>Faculty Form</h2>
-            <form id="stuForm" method="post">
+            <form id="facultyForm" method="post">
                 <div class="form-group">
-                    <span><label for="stuId">Student ID:</label> <label id="stuIdMsg">
+                    <span><label for="facultyId">Faculty ID:</label> <label id="facultyIdMsg">
                         </label></span>
-                    <input type="text" class="form-control" name="stuId" id="stuId" placeholder="Enter Student ID" required>
+                    <input type="text" class="form-control" name="facultyId" id="facultyId" placeholder="Enter Faculty ID" required>
                 </div>
                 <div class="form-group">
-                    <label for="stuName">Student Name:</label>
-                    <input type="text" class="form-control" id="stuName" placeholder="Enter Student Name" name="stuName">
+                    <label for="facultyName">Faculty Name:</label>
+                    <input type="text" class="form-control" id="facultyName" placeholder="Enter Faculty Name" name="facultyName">
                 </div>
                 <div class="form-group">
-                    <label for="stuEmail">Email:</label>
-                    <input type="email" class="form-control" id="stuEmail" placeholder="Enter Student Email" name="stuEmail">
+                    <label for="facultyEmail">Email:</label>
+                    <input type="email" class="form-control" id="facultyEmail" placeholder="Enter Faculty Email" name="facultyEmail">
                 </div>
-                <input type="button" class="btn btn-primary" id="stuSave" value="Save" onclick="saveStudent();">
-                <input type="button" class="btn btn-primary" id="stuReset" value="Reset" onclick="saveStudent();">
-                <input type="button" class="btn btn-primary" id="studel" value="Delete Record" onclick="saveStudent();">
+                <input type="button" class="btn btn-primary" id="facultySave" value="Save" onclick="saveFaculty();">
+                <input type="button" class="btn btn-primary" id="facultyReset" value="Reset" onclick="saveFaculty();">
+                <input type="button" class="btn btn-primary" id="facultydel" value="Delete Record" onclick="saveFaculty();">
             </form>
         </div>
 
         <script>
-            $("#stuId").focus();
+            $("#facultyId").focus();
             function validateAndGetFormData() {
-                var stuIdVar = $("#stuId").val();
-                if (stuIdVar === "") {
-                    alert("Student ID Required Value");
-                    $("#stuId").focus();
+                var facultyIdVar = $("#facultyId").val();
+                if (facultyIdVar === "") {
+                    alert("Faculty ID Required Value");
+                    $("#facultyId").focus();
                     return "";
                 }
 
-                var stuNameVar = $("#stuName").val();
-                if (stuNameVar === "") {
-                    alert("Student Name is Required Value");
-                    $("#stuName").focus();
+                var facultyNameVar = $("#facultyName").val();
+                if (facultyNameVar === "") {
+                    alert("Faculty Name is Required Value");
+                    $("#facultyName").focus();
                     return "";
                 }
 
-                var stuEmailVar = $("#stuEmail").val();
-                if (stuEmailVar === "") {
-                    alert("Student Email is Required Value");
-                    $("#stuEmail").focus();
+                var facultyEmailVar = $("#facultyEmail").val();
+                if (facultyEmailVar === "") {
+                    alert("Faculty Email is Required Value");
+                    $("#facultyEmail").focus();
                     return "";
                 }
 
                 var jsonStrObj = {
-                    stuId: stuIdVar,
-                    stuName: stuNameVar,
-                    stuEmail: stuEmailVar,
+                    facultyId: facultyIdVar,
+                    facultyName: facultyNameVar,
+                    facultyEmail: facultyEmailVar,
                 };
                 return JSON.stringify(jsonStrObj);
             }
@@ -166,20 +166,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
 
             function resetForm() {
-                $("#stuId").val("")
-                $("#stuName").val("");
-                $("#stuEmail").val("");
-                $("#stuId").focus();
+                $("#facultyId").val("")
+                $("#facultyName").val("");
+                $("#facultyEmail").val("");
+                $("#facultyId").focus();
             }
 
-            function saveStudent() {
+            function saveFaculty() {
                 var jsonStr = validateAndGetFormData();
                 if (jsonStr === "") {
                     return;
                 }
 
 
-                var updateReqStr = createUPDATERecordRequest("90939218|-31949266693108394|90951769", jsonStr, "Student", "stu-Rel");
+                var updateReqStr = createUPDATERecordRequest("90939218|-31949266693108394|90951769", jsonStr, "Faculty", "faculty-Rel");
 
                 alert(updateReqStr);
                 jQuery.ajaxSetup({async: false});
@@ -189,7 +189,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 jQuery.ajaxSetup({async: true});
                 resetForm();
 
-                var putReqStr = createPUTRequest("90939218|-31949266693108394|90951769", jsonStr, "Student", "stu-Rel");
+                var putReqStr = createPUTRequest("90939218|-31949266693108394|90951769", jsonStr, "Faculty", "faculty-Rel");
 
                 alert(putReqStr);
                 jQuery.ajaxSetup({async: false});
@@ -199,7 +199,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 jQuery.ajaxSetup({async: true});
                 resetForm();
 
-                var removeReqStr = createREMOVERecordRequest("90939218|-31949266693108394|90951769", jsonStr, "Student", "stu-Rel");
+                var removeReqStr = createREMOVERecordRequest("90939218|-31949266693108394|90951769", jsonStr, "Faculty", "faculty-Rel");
 
                 alert(removeReqStr);
                 jQuery.ajaxSetup({async: false});
